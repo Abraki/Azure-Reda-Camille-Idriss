@@ -9,6 +9,7 @@ const config = {
     password: process.env.Password,
     server: process.env.host,
     database: process.env.Database,
+    port: 1433,
     options: {
         encrypt: true,
         trustServerCertificate: false
