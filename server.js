@@ -5,11 +5,14 @@ const path = require('path');
 
 // Configuration via les variables d'environnement (ce qu'on a configuré sur Azure)
 const config = {
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    server: process.env.DB_HOST, 
-    database: process.env.DB_NAME,
-    options: { encrypt: true, trustServerCertificate: false }
+    user: process.env.User,
+    password: process.env.Password,
+    server: process.env.host,
+    database: process.env.Database,
+    options: {
+        encrypt: true,
+        trustServerCertificate: false
+    }
 };
 
 // Route pour récupérer la donnée en BDD
@@ -29,3 +32,4 @@ app.get('/', (req, res) => {
 });
 
 app.listen(process.env.PORT || 8080, () => console.log('Serveur prêt !'));
+
