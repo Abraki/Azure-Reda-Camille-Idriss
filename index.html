@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>Projet Exam Azure</h1>
+    <div id="status">Chargement de la connexion BDD...</div>
+    <script>
+        fetch('/api/data')
+            .then(res => res.json())
+            .then(data => {
+                document.getElementById('status').innerText = "Réponse BDD : " + data.message;
+                document.getElementById('status').style.color = "green";
+            })
+            .catch(err => {
+                document.getElementById('status').innerText = "Erreur de connexion";
+                document.getElementById('status').style.color = "red";
+            });
+    </script>
+</body>
+</html>
