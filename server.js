@@ -12,8 +12,11 @@ const config = {
     port: 1433,
     options: {
         encrypt: true,
-        trustServerCertificate: false
-    }
+        trustServerCertificate: false,
+        enableArithAbort: true
+    },
+    connectionTimeout: 30000,
+    requestTimeout: 30000
 };
 
 // Route pour récupérer la donnée en BDD
